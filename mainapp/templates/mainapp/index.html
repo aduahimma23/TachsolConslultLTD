@@ -1,0 +1,377 @@
+{% extends "mainapp/base.html" %}
+{% block title %} home {% endblock %}
+{% block content %}
+{% load static %}
+
+
+<div style="overflow: hidden;">
+   <section class="features-area bg-light-white pt-40 pb-40 pb-xs-00">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4 text-center text-lg-left">
+                    <div class="icon-box d-flex flex-column flex-lg-row align-items-center">
+                        <div class="icon-img mr-20 mr-md-00 mb-md-10">
+                            <img src="{% static 'icons/customer-service.png '%}" alt="Icon" style="height: 50px; width: 50px;">
+                        </div>
+                        <div class="icon-text">
+                            <h5 class="f-700">24/7 Suport Team</h5>
+                            <p>Quisque enim ipsumlop</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 text-center text-lg-left">
+                    <div class="icon-box d-flex flex-column flex-lg-row align-items-center">
+                        <div class="icon-img mr-20 mr-md-00 mb-md-10">
+                            <img src="{% static 'icons/quality-service.png' %}" alt="Icon" style="height: 50px; width: 50px;">
+                        </div>
+                        <div class="icon-text">
+                            <h5 class="f-700">Quality Services</h5>
+                            <p>Sed ut perspiciatis unde</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 text-center text-lg-left">
+                    <div class="icon-box d-flex flex-column flex-lg-row align-items-center">
+                        <div class="icon-img mr-20 mr-md-00 mb-md-10">
+                            <img src="{% static 'icons/accessible.png' %}" alt="Icon" style="height: 50px; width: 50px;">
+                        </div>
+                        <div class="icon-text">
+                            <h5 class="f-700">Budget Friendly</h5>
+                            <p>Voluptate satium dolore</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-us pt-100 pb-100">
+        <div class="container">
+            <div class="row align-items-xl-center">
+                <div class="col-lg-5">
+                    <div class="ceo-video relative img-lined mx-auto shadow-1 wow fadeInLeft">
+                        <img src="img/about/ceo.jpg" alt="">
+                        <div class="blob green transform-center">
+                            <a href="https://www.youtube.com/watch?v=qtQgbdmIO30" class="popup-video"> <i class="fas fa-play"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="about-text mt-md-60 text-center text-lg-left wow fadeInRight">
+                        <div class="fancy-head left-al  mb-10">
+                            <h5 class="line-head mb-10">
+              <span class="line before d-lg-none"></span>
+                About Us
+              <span class="line  after"></span>
+            </h5>
+                            <h1>Our Success Story</h1>
+                        </div>
+                        <p>Quisque enim ipsum, commodo et venenatis rutrum, luctus in enim. Quisque dapibus lacus non pulvinar lobortis. Cras odio dolor, pulv inar id ligula non, congue aliquam velit. Pellentesque tempor ornare mal esuada. Mauris vel metus vel urna interdum.</p>
+                        <p>Pellentesque tempor ornare mal esuada. Mauris vel metus vel urna interdum condimentum. Pelle ntesque Quisque enim ipsum, co mmodo et venenatis rutrum ornare mal esuada.. <a href="about-us.html">Read More</a></p>
+                        <div class="about-author mt-20 d-flex align-items-center justify-content-center justify-content-lg-start">
+                            <div class="signature mr-45 mr-xs-15">
+                                <img src="img/about/signature.png" alt="">
+                            </div>
+                            <div class="name-author">
+                                <p class="name">Jhon Doe</p>
+                                <p>Founder & CEO</p>
+                            </div>
+                        </div>
+                        <div class="hr-line mb-30 mt-30"></div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="count-box wow fadeInUp">
+                                    <h3 class="f-900 mb-10"><span class="counter">100+</span>+</h3>
+                                    <p>Happy Clients</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="callback-area pt-95 pb-85" style="background-image: url('img/banner/banner_1.jpg');" data-overlay="9">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="fancy-head text-center relative z-5 mb-40 wow fadeInDown">
+                        <h5 class="line-head mb-15 white">
+                  <span class="line before bg-white"></span>
+                    Contact Us
+                  <span class="line after bg-white"></span>
+                </h5>
+                        <h1 class="white">Request a Call Back</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-12">
+                    <form action="#" class="relative z-5  wow fadeInUp">
+                        <div class="row">
+                            <div class="col-xl-10 col-lg-12">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group relative">
+                                            <input type="text" class="form-control input-white shadow-2" id="name" placeholder="Name">
+                                            <i class="far fa-user transform-v-center"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group relative">
+                                            <input type="email" class="form-control input-white shadow-2" id="email" placeholder="Email">
+                                            <i class="far fa-envelope transform-v-center"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group relative">
+                                            <input type="text" class="form-control input-white shadow-2" id="phone" placeholder="Phone number">
+                                            <i class="fas fa-mobile-alt transform-v-center"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-2 col-lg-12">
+                                <button class="btn btn-blue btn-block request-btn uppercase shadow-2">submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="team-area pt-95 pb-100">
+        <div class="container">
+            <div class="row align-items-end text-center text-lg-left  mb-45">
+                <div class="col-lg-7">
+                    <div class="fancy-head left-al">
+                        <h5 class="line-head mb-15">
+                  <span class="line before d-lg-none"></span>
+                    Our Team
+                  <span class="line after"></span>
+                </h5>
+                        <h1>Meet Our Best Team</h1>
+                    </div>
+                </div>
+                <div class="col-lg-5 text-lg-right">
+                    <div class="arrow-navigation mb-15 mt-md-20">
+                        <a href="#" class="nav-slide slide-left">
+                            <img src="img/icons/ar_lt.png" alt="">
+                        </a>
+                        <a href="#" class="nav-slide slide-right">
+                            <img src="img/icons/ar_rt.png" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="owl-carousel team-slider">
+                        <div class="item">
+                            <div class="team-each">
+                                <div class="team-image relative img-lined">
+                                    <img src="img/team/team1.jpg" alt="">
+                                    <div class="hover-team z-10 transition-4">
+                                        <a href="team-detail.html" class="plus-btn flex-center transform-center">
+                                            <i class="fas fa-plus"></i>
+                                        </a>
+                                        <ul class="social-icons transform-h-center">
+                                            <li>
+                                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="team-info text-center transition-4">
+                                    <h5>
+                                        <a href="#" class="f-700">Jessica David</a>
+                                    </h5>
+                                    <p class="mb-0">Co Founder</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="team-each">
+                                <div class="team-image relative img-lined">
+                                    <img src="img/team/team2.jpg" alt="">
+                                    <div class="hover-team z-10 transition-4">
+                                        <a href="team-detail.html" class="plus-btn flex-center transform-center">
+                                            <i class="fas fa-plus"></i>
+                                        </a>
+                                        <ul class="social-icons transform-h-center">
+                                            <li>
+                                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="team-info text-center transition-4">
+                                    <h5>
+                                        <a href="#" class="f-700">Jhone Doe</a>
+                                    </h5>
+                                    <p class="mb-0">Finance Manager</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="team-each">
+                                <div class="team-image relative img-lined">
+                                    <img src="img/team/team3.jpg" alt="">
+                                    <div class="hover-team z-10 transition-4">
+                                        <a href="team-detail.html" class="plus-btn flex-center transform-center">
+                                            <i class="fas fa-plus"></i>
+                                        </a>
+                                        <ul class="social-icons transform-h-center">
+                                            <li>
+                                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="team-info text-center transition-4">
+                                    <h5>
+                                        <a href="#" class="f-700">Jessica David</a>
+                                    </h5>
+                                    <p class="mb-0">Marketing Manager</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="team-each">
+                                <div class="team-image relative img-lined">
+                                    <img src="img/team/team4.jpg" alt="">
+                                    <div class="hover-team z-10 transition-4">
+                                        <a href="team-detail.html" class="plus-btn flex-center transform-center">
+                                            <i class="fas fa-plus"></i>
+                                        </a>
+                                        <ul class="social-icons transform-h-center">
+                                            <li>
+                                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="team-info text-center transition-4">
+                                    <h5>
+                                        <a href="#" class="f-700">Jessica David</a>
+                                    </h5>
+                                    <p class="mb-0">Web Designer</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="team-each">
+                                <div class="team-image relative img-lined">
+                                    <img src="img/team/team1.jpg" alt="">
+                                    <div class="hover-team z-10 transition-4">
+                                        <a href="team-detail.html" class="plus-btn flex-center transform-center">
+                                            <i class="fas fa-plus"></i>
+                                        </a>
+                                        <ul class="social-icons transform-h-center">
+                                            <li>
+                                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="team-info text-center transition-4">
+                                    <h5>
+                                        <a href="#" class="f-700">Jessica David</a>
+                                    </h5>
+                                    <p class="mb-0">Co Founder</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="team-each">
+                                <div class="team-image relative img-lined">
+                                    <img src="img/team/team2.jpg" alt="">
+                                    <div class="hover-team z-10 transition-4">
+                                        <a href="team-detail.html" class="plus-btn flex-center transform-center">
+                                            <i class="fas fa-plus"></i>
+                                        </a>
+                                        <ul class="social-icons transform-h-center">
+                                            <li>
+                                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="team-info text-center transition-4">
+                                    <h5>
+                  <a href="#" class="f-700">Jhone Doe</a>
+                </h5>
+                                    <p class="mb-0">Finance Manager</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+{% endblock %}

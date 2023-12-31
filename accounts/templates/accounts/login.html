@@ -1,0 +1,29 @@
+
+{% extends "accounts/accounts_base.html"%}
+{% load bootstrap4 %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+</head>
+<body>
+    <h1>Login</h1>
+    <div class="container">
+    <form method="post" action="login.html" class="was-validated">
+        {% csrf_token %}
+
+        <div class="form-group">
+        {{ form.staff_id.label_tag }}
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Please fill out this field.</div>
+        </div>
+        {{ form.staff_id }}
+        {{ form.password.label_tag }}
+        {{ form.password }}
+        <button type="submit">Log in</button>
+    </form>
+  </div>
+</body>
+</html>
+{% endblock %}
