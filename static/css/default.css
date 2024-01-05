@@ -1,13 +1,3 @@
-/*============================================*/
-
-
-/* Deafult css styles */
-
-
-/*============================================*/
-
-
-/*-- Margin Top --*/
 
 .mt-5 {
     margin-top: 5px !important;
@@ -88,9 +78,6 @@
 .mt-100 {
     margin-top: 100px;
 }
-
-
-/*-- Margin Bottom --*/
 
 .mb-0 {
     margin-bottom: 0px !important;
@@ -175,9 +162,6 @@
 .mb-100 {
     margin-bottom: 100px;
 }
-
-
-/*--margin right--*/
 
 .mr-5 {
     margin-right: 5px !important;
@@ -2425,10 +2409,6 @@
     opacity: 0.0;
 }
 
-.opacity-1 {
-    opacity: 0.1;
-}
-
 .opacity-2 {
     opacity: 0.2;
 }
@@ -2567,20 +2547,6 @@
     z-index: 50;
 }
 
-
-/*============================================*/
-
-
-/* Overlay color bg options */
-
-
-/*============================================*/
-
-.bg-cover {
-    background-size: cover;
-    background-position: center center;
-}
-
 [data-overlay] {
     position: relative;
     background-size: cover;
@@ -2640,81 +2606,6 @@
 [data-overlay="9"]::before {
     opacity: 0.9;
 }
-
-
-/*============================================*/
-
-
-/* Custome radio and checkbox */
-
-
-/*============================================*/
-
-.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
-    background-color: #e9f1f9;
-    border: 1px solid #09bc8a;
-}
-
-.custom-checkbox .custom-control-input:checked~.custom-control-label::after {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='MediumSeaGreen' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E");
-    background-size: 10px;
-}
-
-.custom-control-input:focus~.custom-control-label::before {
-    box-shadow: none;
-}
-
-
-/*============================================*/
-
-
-/* Star rating  */
-
-
-/*============================================*/
-
-[data-starsactive] li i {
-    color: rgba(255, 255, 255, 0.30);
-}
-
-[data-starsactive~="1"] li i:nth-child(1) {
-    color: #e7b816;
-}
-
-[data-starsactive~="2"] li i:nth-child(1),
-[data-starsactive~="2"] li i:nth-child(2) {
-    color: #e7b816;
-}
-
-[data-starsactive~="3"] li i:nth-child(1),
-[data-starsactive~="3"] li i:nth-child(2),
-[data-starsactive~="3"] li i:nth-child(3) {
-    color: #e7b816;
-}
-
-[data-starsactive~="4"] li i:nth-child(1),
-[data-starsactive~="4"] li i:nth-child(2),
-[data-starsactive~="4"] li i:nth-child(3),
-[data-starsactive~="4"] li i:nth-child(4) {
-    color: #e7b816;
-}
-
-[data-starsactive~="5"] li i:nth-child(1),
-[data-starsactive~="5"] li i:nth-child(2),
-[data-starsactive~="5"] li i:nth-child(3),
-[data-starsactive~="5"] li i:nth-child(4),
-[data-starsactive~="5"] li i:nth-child(5) {
-    color: #e7b816;
-}
-
-
-/*============================================*/
-
-
-/* Custome animation classess */
-
-
-/*============================================*/
 
 @-webkit-keyframes fadeIn {
     from {
@@ -2958,11 +2849,6 @@
     }
 }
 
-.fadeOutDown {
-    -webkit-animation-name: fadeOutDown;
-    animation-name: fadeOutDown;
-}
-
 .blob-small {
     animation: pulse-green-small 2s infinite;
 }
@@ -3019,30 +2905,9 @@
 }
 
 
-/*============================================*/
-
-
-/* Other styles */
-
-
-/*============================================*/
-
-
-/*img-full wifth*/
-
 .img-100 {
     width: 100%;
 }
-
-.full-cover {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    text-align: center;
-}
-
 
 /*transform center*/
 
@@ -3088,22 +2953,6 @@
     position: relative;
 }
 
-
-/*hr*/
-
-.hr-1 {
-    height: 1px;
-}
-
-.hr-2 {
-    height: 2px;
-}
-
-.hr-3 {
-    height: 3px;
-}
-
-
 /*border-line*/
 
 .img-lined {
@@ -3137,30 +2986,6 @@
     width: auto;
     height: auto;
 }
-
-
-/*transition 0.4s */
-
-.transition-4,
-.transition-4:hover {
-    -webkit-transition: all .4s ease-out;
-    -moz-transition: all .4s ease-out;
-    -o-transition: all .4s ease-out;
-    transition: all .4s ease-out;
-}
-
-.transition-5,
-.transition-5:hover {
-    -webkit-transition: all .4s ease-out;
-    -moz-transition: all .4s ease-out;
-    -o-transition: all .4s ease-out;
-    transition: all .4s ease-out;
-    -webkit-transition: all 500ms cubic-bezier(0.855, 0.000, 0.155, 1.000);
-    -moz-transition: all 500ms cubic-bezier(0.855, 0.000, 0.155, 1.000);
-    -o-transition: all 500ms cubic-bezier(0.855, 0.000, 0.155, 1.000);
-    transition: all 500ms cubic-bezier(0.855, 0.000, 0.155, 1.000);
-}
-
 
 /*box shadow options */
 

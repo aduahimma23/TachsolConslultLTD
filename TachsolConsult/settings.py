@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "accounts",
     "mainapp",
-    "bootstrap4"
 ]
 
 MIDDLEWARE = [
@@ -59,7 +58,7 @@ ROOT_URLCONF = "TachsolConsult.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [TEMPLATES_DIR,],
+        "DIRS": [TEMPLATES_DIR, ],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [

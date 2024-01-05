@@ -1,5 +1,3 @@
-
-
 body,
 ul,
 label,
@@ -88,7 +86,7 @@ button,
 .week-count h1,
 .case-quote a,
 .sub-2:after {
-    color: #09bc8a;
+    color: #11235A;
 }
 
 
@@ -101,7 +99,7 @@ button,
 .slider-control.type-3 .dots-slider .owl-dot,
 .team-detail-3[data-overlay]::before,
 .inner-banner[data-overlay]::before {
-    background: #282f41;
+    background: #F4CE14;
 }
 
 
@@ -132,7 +130,7 @@ button,
 .how-it-works[data-overlay]::before,
 .price-tag,
 .input-white + .input-group-append .btn:hover {
-    background: #001c6b;
+    background: #F4CE14;
 }
 
 
@@ -230,7 +228,7 @@ button,
 .portfolio-overlay:before,
 .line-right:after,
 .experience li:after {
-    background: #09bc8a;
+    background: #11235A;
 }
 
 
@@ -347,10 +345,6 @@ button,
 }
 
 
-/* ....................................
-11. border green
-.......................................*/
-
 .client-image:before,
 .btn-square-white:hover,
 .input-search:focus,
@@ -371,21 +365,21 @@ button,
 .icon-box-icon,
 .partner:hover .partner-logo,
 .thank-icon {
-    border-color: #09bc8a;
+    border-color: #11235A;
 }
 
 
 /*border left color*/
 
 .client-count:after {
-    border-left-color: #09bc8a
+    border-left-color: #F4CE14
 }
 
 
 /*border topcolor*/
 
 .partner:hover .partner-logo:after {
-    border-top-color: #09bc8a
+    border-top-color: #F4CE14
 }
 
 
@@ -438,18 +432,15 @@ button,
 .blackbg-1,
 .footer-area,
 .social-links li a {
-    background-color: #1c2733;
+    background-color: #0C356A;
 }
 
 .blackbg-2,
 .contact-area,
 .mean-container .mean-nav {
-    background-color: #1c2733;
+    background-color: #0C356A;
 }
 
 .copyright {
-    background-color: #131c26;
+    background-color: #0C356A;
 }
-
-
-/*end*/
