@@ -3,8 +3,7 @@
 {% block content %}
 {% load static %}
 
-
-<section class="inner-banner pt-80 pb-95" style="background-image: url('img/banner/inner-banner.jpg');" data-overlay="7">
+<section class="inner-banner pt-80 pb-95" data-overlay="7">
     <div class="container">
         <div class="row z-5 align-items-center">
             <div class="col-md-8 text-center text-md-left">
@@ -41,7 +40,7 @@
                             <h4 class="f-700 mt-20 mb-10">
                             <a href="#">{{ service.name }}</a>
                         </h4>
-                            <p>Quisque enim ipsum, commodo et venenatis rutrum, luctus in enim quisque dapibus...</p>
+                            <p>{{ service.content }}</p>
                             <a href="#" class="btn btn-round mt-10">Learn More</a>
                         </div>
                     </div>
