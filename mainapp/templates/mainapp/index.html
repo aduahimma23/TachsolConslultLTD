@@ -1,88 +1,41 @@
 {% extends "mainapp/base.html" %}
-{% block title %} home {% endblock %}
+{% block title %} Home {% endblock %}
 {% block content %}
 {% load static %}
 
-
-<div style="overflow: hidden;">
-   <section class="features-area bg-light-white pt-40 pb-40 pb-xs-00">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-4 text-center text-lg-left">
-                    <div class="icon-box d-flex flex-column flex-lg-row align-items-center">
-                        <div class="icon-img mr-20 mr-md-00 mb-md-10">
-                            <img src="{% static 'icons/customer-service.png '%}" alt="Icon" style="height: 50px; width: 50px;">
-                        </div>
-                        <div class="icon-text">
-                            <h5 class="f-700">24/7 Suport Team</h5>
-                            <p>Quisque enim ipsumlop</p>
-                        </div>
+<main>
+    <div class="home" style="margin-top: 0.05%;">
+        <div id="carouselExampleCaptions" class="carousel slide mb-5" data-ride="carousel" style="height: 500px; padding-top: 5px;">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="{% static 'images/banner/tachsol.png' %}" class="d-block w-100" alt="Image not found" height="500px">
+                    <div class="carousel-caption d-none d-md-block text-dark">
                     </div>
                 </div>
-                <div class="col-sm-4 text-center text-lg-left">
-                    <div class="icon-box d-flex flex-column flex-lg-row align-items-center">
-                        <div class="icon-img mr-20 mr-md-00 mb-md-10">
-                            <img src="{% static 'icons/quality-service.png' %}" alt="Icon" style="height: 50px; width: 50px;">
-                        </div>
-                        <div class="icon-text">
-                            <h5 class="f-700">Quality Services</h5>
-                            <p>Sed ut perspiciatis unde</p>
-                        </div>
-                    </div>
+                <div class="carousel-item">
+                    <img src="{% static 'images/banner/inner-banner.jpg' %}" class="d-block w-100" alt="Image not found" height="500px">
                 </div>
-                <div class="col-sm-4 text-center text-lg-left">
-                    <div class="icon-box d-flex flex-column flex-lg-row align-items-center">
-                        <div class="icon-img mr-20 mr-md-00 mb-md-10">
-                            <img src="{% static 'icons/accessible.png' %}" alt="Icon" style="height: 50px; width: 50px;">
-                        </div>
-                        <div class="icon-text">
-                            <h5 class="f-700">Budget Friendly</h5>
-                            <p>Voluptate satium dolore</p>
-                        </div>
-                    </div>
+                <div class="carousel-item">
+                    <img src="{% static 'images/banner/banner1.jpg' %}" class="d-block w-100" alt="Image not found" height="500px">
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'images/banner/tconsult.jpg' %}" class="d-block w-100" alt="Image not found" height="500px">
                 </div>
             </div>
+            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </a>
         </div>
-    </section>
-
-    <section class="about-us pt-100 pb-100">
-        <div class="container">
-            <div class="row align-items-xl-center">
-                <div class="col-lg-7">
-                    <div class="about-text mt-md-60 text-center text-lg-left wow fadeInRight">
-                        <div class="fancy-head left-al  mb-10">
-                            <h5 class="line-head mb-10">
-                                <span class="line before d-lg-none"></span>
-                                    About Us
-                                <span class="line  after"></span>
-                            </h5>
-                            <h1>Our Success Story</h1>
-                        </div>
-                        <p>Quisque enim ipsum, commodo et venenatis rutrum, luctus in enim. Quisque dapibus lacus non pulvinar lobortis. Cras odio dolor, pulv inar id ligula non, congue aliquam velit. Pellentesque tempor ornare mal esuada. Mauris vel metus vel urna interdum.</p>
-                        <p>Pellentesque tempor ornare mal esuada. Mauris vel metus vel urna interdum condimentum. Pelle ntesque Quisque enim ipsum, co mmodo et venenatis rutrum ornare mal esuada.. <a href="about-us.html">Read More</a></p>
-                        <div class="about-author mt-20 d-flex align-items-center justify-content-center justify-content-lg-start">
-                            <div class="signature mr-45 mr-xs-15">
-                                <img src="img/about/signature.png" alt="">
-                            </div>
-                            <div class="name-author">
-                                <p class="name">Jhon Doe</p>
-                                <p>Founder & CEO</p>
-                            </div>
-                        </div>
-                        <div class="hr-line mb-30 mt-30"></div>
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <div class="count-box wow fadeInUp">
-                                    <h3 class="f-900 mb-10"><span class="counter">100+</span>+</h3>
-                                    <p>Happy Clients</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    </div>
 
     <section class="callback-area pt-95 pb-85" data-overlay="9">
         <div class="container">
@@ -158,45 +111,8 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="owl-carousel team-slider">
-                        <div class="item">
-                            <div class="team-each">
-                                <div class="team-image relative img-lined">
-                                    <img src="{% static 'images/icons/ar_lt.png' %}" alt="">
-                                    <div class="hover-team z-10 transition-4">
-                                        <a href="team-detail.html" class="plus-btn flex-center transform-center">
-                                            <i class="fas fa-plus"></i>
-                                        </a>
-                                        <ul class="social-icons transform-h-center">
-                                            <li>
-                                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="fab fa-google-plus-g"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="team-info text-center transition-4">
-                                    <h5>
-                                        <a href="#" class="f-700">Jessica David</a>
-                                    </h5>
-                                    <p class="mb-0">Co Founder</p>
-                                </div>
-                            </div>
-                        </div>
-                </div>
-            </div>
-        </div>
     </section>
 </div>
+</main>
 
 {% endblock %}

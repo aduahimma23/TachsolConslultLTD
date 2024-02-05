@@ -9,7 +9,7 @@ urlpatterns = [
     path('mission/', views.Mission.as_view(), name='mission'),
     path('contact/', views.contact_us, name='contact'),
     path('portfolio/', views.portFolio, name='portfolio'),
-    path('client/', views.ourClients, name='client'),
+    path('client/', views.client_view, name='client'),
     path('services/', views.ServicesView.as_view(), name="services"),
     path('team/', views.team, name='team')
 ]

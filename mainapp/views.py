@@ -28,11 +28,10 @@ def portFolio(request):
 
     return render(request, "mainapp/portfolio.html", context)
 
-def ourClients(request):
+def client_view(request):
     clients = Clients.objects.all()
-    context = clients
 
-    return render(request, "mainapp/clients.html", {"clients": context})
+    return render(request, "mainapp/clients.html", {"clients": clients})
 
 def about(request):
     return render(request, 'mainapp/about.html')
