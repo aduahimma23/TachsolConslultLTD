@@ -1,0 +1,123 @@
+body{
+    min-height: 100hv;
+}
+
+.navbar-brand {
+    margin-left: 0 !important;
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+.navbar-brand img {
+    margin-right: 10px;
+    height: auto;
+    border-radius: 50%;
+    border: 2px solid yellow;
+    background-color: #fff;
+}
+
+.nav-link{
+    padding-right: 10px;
+    align-items: center;
+}
+
+form .form-control{
+    margin-left: 15px;
+    justify-content: center;
+}
+
+.navbar-nav .nav-link {
+    padding-right: 10px;
+    font-size: 18px; 
+    border: 2px solid #007bff;
+    background-color: #fff;
+    margin: 0 10px;
+    border-radius: 10px;
+    color: black;
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* Services */
+.service-card {
+    margin-bottom: 20px;
+}
+
+.service-card img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* contact page */
+.is-invalid {
+    border: 2px solid #dc3545 !important;
+}
+
+.invalid-feedback {
+    color: #dc3545;
+}
+
+.contact-box {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.contact-form {
+    background-color: #f8f9fa;
+    padding: 50px 0;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.contact-form .form-group {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.contact-form textarea {
+    resize: none;
+}
+
+.contact-form textarea,
+.contact-form input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.contact-form textarea:hover,
+.contact-form input:hover {
+    border-color: #007bff;
+}
+
+.contact-form textarea:focus,
+.contact-form input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.contact-form .btn-square {
+    background-color: #007bff;
+    color: #fff;
+    padding: 15px 25px;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+    text-decoration: none;
+}
+
+.contact-form .btn-square:hover {
+    background-color: #0056b3;
+}
