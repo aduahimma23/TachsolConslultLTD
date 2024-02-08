@@ -1,11 +1,64 @@
 from django.db import models
 from django.core.exceptions import ValidationError
 
+class Title(models.Model):
+    MALE = 'Mr.'
+    FEMALE_SINGLE = 'Ms.'
+    FEMALE_MARRIED = 'Mrs.'
+
+    CHOICES = [
+        (MALE, 'Male'),
+        (FEMALE_SINGLE, 'Female (Single)'),
+        (FEMALE_MARRIED, 'Female (Married)'),
+    ]
+
+class Project(models.Model):
+    title = models.CharField(max_length=100)
+    description = models.TextField()
+    start_date = models.DateField()
+    end_date = models.DateField()
+
+    def __str__(self):
+        return self.title
+    
+
+class ScopeofOpearation(models.Model):
+    name = models.CharField(max_length=100, blank=False, default='Human Resource Development, Training, and Facilitation')
+    description = models.TextField(max_length=200, blank=True, default='Human Resource Development')
+
+    def __str__(self):
+        return self.name
+
+
+class Services(models.Model):
+    scope = models.ForeignKey(ScopeofOpearation, on_delete=models.CASCADE)
+    activity = models.CharField(max_length=255, blank=False, default='Training Needs Assessment')
+    description = models.TextField(max_length=255, blank=True, default='Short note about the activity')
+
+    def __str__(self):
+        return self.scope.name
+    
+
+class Testimonial(models.Model):
+    title = models.ForeignKey(Title, on_delete=models.CASCADE)
+    author = models.CharField(max_length=100, default='Mr. Martin Offei')
+    content = models.TextField(max_length=1500, default="Write the testimonial here")
+
+class HomePage(models.Model):
+    welcome_message = models.TextField()
+    services = models.ManyToManyField(Services)
+    projects = models.ManyToManyField(Project)
+    testimonials = models.ManyToManyField(Testimonial)
+
+    def __str__(self):
+        return "Homepage Content"
+
+
 class Portfolio(models.Model):
-    image = models.ImageField(upload_to='portfolio_images/', blank=True)
-    title = models.CharField(max_length=100, default="Mr", blank=False)
+    title = models.ForeignKey(Title, on_delete=models.CASCADE)
     name = models.CharField(max_length=50, default="Tachsol", blank=False)
     email = models.EmailField(default="tachsol.km@gmail.com", blank=False)
+    image = models.ImageField(upload_to='portfolio_images/', blank=True)
     content = models.TextField(max_length=1500, default="Tachsol Consult", blank=False)
     phone_number = models.CharField(max_length=15, default="+1234567890", blank=False, help_text="Enter in the format: +1234567890")
     work_experience = models.TextField(max_length=1000, blank=False, default='legal practitioner')
@@ -57,20 +110,3 @@ class TeamMembers(models.Model):
 
     def __str__(self):
         return f'{self.name} {self.email}'
-
-
-class ScopeofOpearation(models.Model):
-    name = models.CharField(max_length=100, blank=False, default='Human Resource Development, Training, and Facilitation')
-    description = models.TextField(max_length=200, blank=True, default='Human Resource Development')
-
-    def __str__(self):
-        return self.name
-
-
-class Services(models.Model):
-    scope = models.ForeignKey(ScopeofOpearation, on_delete=models.CASCADE)
-    activity = models.CharField(max_length=255, blank=False, default='Training Needs Assessment')
-    description = models.TextField(max_length=255, blank=True, default='Short note about the activity')
-
-    def __str__(self):
-        return self.activity
