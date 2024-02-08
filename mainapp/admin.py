@@ -1,7 +1,6 @@
 from django.contrib import admin
 from .models import (Portfolio, Clients, TeamMembers, Services,
-            EmploymentRecord, ScopeofOpearation, Testimonial, 
-            Project, HomePage)
+                        EmploymentRecord, ScopeofOpearation, Testimonial, Project, HomePage)
 
 class ClientsAdmin(admin.ModelAdmin):
     list_display = ('name', 'location', 'sector_of_work')

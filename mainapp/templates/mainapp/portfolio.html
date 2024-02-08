@@ -3,15 +3,56 @@
 {% block content %}
 {% load static %}
 
-<section class="inner-banner pt-80 pb-95" style="background-image: url('img/banner/inner-banner.jpg');" data-overlay="5">
+<section class="inner-banner">
     <div class="container">
-        <div class="row z-5 align-items-center">
-            <div class="col-md-8 text-center text-md-left">
-                <h1 class="f-700 blue" style="text-align: center;">Portfolios</h1>
-                <span class="green-line bg-green d-none d-md-inline-block"></span>
+        <div class="row align-items-center">
+            <div class="col-md-12 text-center">
+                <h1>Portfolios</h1>
             </div>
         </div>
     </div>
 </section>
+
+<div class="container portfolio-container">
+    {% for portfolio in portfolios %}
+    <div class="portfolio-item">
+        <div class="row">
+            <div class="col-md-6">
+                <h3>{{ portfolio.title }}</h3>
+                <p><strong>Name:</strong> {{ portfolio.name }}</p>
+                <p><strong>Email:</strong> {{ portfolio.email }}</p>
+                <p><strong>Phone Number:</strong> {{ portfolio.phone_number }}</p>
+                <p><strong>Work Experience:</strong> {{ portfolio.work_experience }}</p>
+                <p><strong>Educational Background:</strong> {{ portfolio.educational_background }}</p>
+            </div>
+            <div class="col-md-6">
+                {% if portfolio.image %}
+                <img src="{{ portfolio.image.url }}" alt="Portfolio Image" class="img-fluid">
+                {% endif %}
+            </div>
+        </div>
+        <hr>
+        <h4>Employment Records</h4>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Year</th>
+                    <th>Position</th>
+                    <th>Duties</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for record in portfolio.employmentrecord_set.all %}
+                <tr>
+                    <td>{{ record.year }}</td>
+                    <td>{{ record.position }}</td>
+                    <td>{{ record.duties }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endfor %}
+</div>
 
 {% endblock %}

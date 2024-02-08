@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .forms import ContactForm
 from django.http import HttpResponseRedirect
-from django.views.generic import TemplateView, ListView
+from django.views.generic import TemplateView
 from .models import Portfolio, Clients, Services, TeamMembers
 
 def contact_us(request):
@@ -22,8 +22,8 @@ def homepage(request):
 class Mission(TemplateView):
     template_name = 'mainapp/mission.html'
 
-def portFolio(request, portfolio_id):
-    portfolios = Portfolio.objects.get(id=portFolio)
+def portFolio(request):
+    portfolios = Portfolio.objects.all
 
     return render(request, "mainapp/portfolio.html", {'portfolios': portfolios})
 
