@@ -13,76 +13,18 @@
     </div>
 </section>
 
-<section class="about-us pt-100 pb-100">
-    <div class="container">
-        <div class="row align-items-xl-center">
-            <div class="col-lg-6">
-                <div class="relative img-lined bg-blue mx-auto shadow-1">
-                    <img src="{% static 'images/tachsol.png' %}" alt="" class="opacity-3 w-100">
-                    <div class="blob green transform-center">
-                        <a href="https://www.youtube.com/watch?v=qtQgbdmIO30" class="popup-video"></a>
-                    </div>
-                </div>
+<div class="about-container mt-4">
+    <div class="row">
+        {% for about in abouts %}
+            <div class="col-md-8 offset-md-2">
+                <h1 class="text-center mb-4">{{ about.title }}</h1>
+                {% if about.image %}
+                    <img src="{{ about.image.url }}" alt="{{ about.title }}" class="img-fluid mb-4">
+                {% endif %}
+                <p>{{ about.content }}</p>
             </div>
-            <div class="col-lg-6">
-                <div class="about-text mt-md-60 text-center text-lg-left">
-                    <div class="fancy-head left-al  mb-10">
-                        <h5 class="line-head mb-10">
-                            <span class="line before d-lg-none"></span>
-                                About Us
-                            <span class="line  after"></span>
-                        </h5>
-                        <h1>Our Success Story</h1>
-                    </div>
-                    <p class="big-p blue">Commodo ullamcorper a lacus vestibulum sed massa tincidunt dui ut ornare lectus sit</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laoreet quis felis eget consequat. Sed vitae tellus mattis, ornare elit vel, hendrerit erat. Integer commodo dui nec est blandit bibendum. Maecenas lectus lectus, rutrum vel laoreet id, cursus tempor metus. Nulla consectetur, risus in sollicitudin pulvinar.</p>
-                    <div class="about-author mt-20 d-flex align-items-center justify-content-center justify-content-lg-start">
-                        <div class="signature mr-45 mr-xs-15">
-                            <img src="img/about/signature.png" alt="">
-                        </div>
-                        <div class="name-author">
-                            <p class="name">Micheal Offei</p>
-                            <p>Founder & CEO</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {% endfor %}
     </div>
-</section>
-
-<section class="mission-vision bg-light-white pt-100 pb-80">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 pr-50 pr-sm-150 mb-md-30">
-                <h2 class="fancy-2 f-700 mb-25"> Our Mission</h2>
-                <p class="f-500 blue fs-15">
-                    Our mission is to provide high quality technical service across a wide 
-                    spectrum of fields within and outside Ghana to Governments and non-governmental organizations 
-                    by the use of both local and foreign experts within the shortest possible time through the 
-                    application of participatory approaches, appropriate and low-cost technologies and methodologies.
-                </p>
-                <p>
-                    The firm will also provide required linkages and coordination between and among key communities, 
-                    local governments, national and international actors involved in development efforts.
-                </p>
-            </div>
-            <div class="col-lg-6 pr-50 pr-sm-15">
-                <h2 class="fancy-2 f-700 mb-25"> Our Vision</h2>
-                <p class="f-500 blue fs-15">
-                    Our methodology and interventions are designed to ensure that we deliver 
-                    the results as specified in the terms of reference and clarified and confirmed in subsequent discussions with our clients.
-                </p>
-                <ul class="check-list-2">
-                    <li>Ensuring outstanding organisational leadership </li>
-                    <li>Creating value and meeting triple bottom line results (economy, ecology and equity) </li>
-                    <li>Contributing to developing better customer services in Ghana </li>
-                    <li>Finding, Assessing and Developing the best Interventions </li>
-                    <li>Delivering a personalised service  </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
+</div>
 
 {% endblock %}

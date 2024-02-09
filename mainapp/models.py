@@ -22,6 +22,17 @@ class Project(models.Model):
         return self.title
     
 
+class About(models.Model):
+    title = models.CharField(max_length=150, default='About Tachsol Consultancy LTD')
+    content = models.TextField()
+    image = models.ImageField(upload_to='about_images/', blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.title
+
+ 
 class ScopeofOpearation(models.Model):
     name = models.CharField(max_length=100, blank=False, default='Human Resource Development, Training, and Facilitation')
     description = models.TextField(max_length=200, blank=True, default='Human Resource Development')

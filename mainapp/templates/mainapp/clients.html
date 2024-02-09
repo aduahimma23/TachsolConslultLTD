@@ -12,34 +12,31 @@
     </div>
 </section>
 
-<section class="partners pt-90 pb-100">
+<section class="partners pt-5 pb-5 bg-light">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
-                <div class="fancy-head text-center relative z-5 mb-45 wow fadeInDown" style="visibility: visible; animation-name: fadeInDown;">
-                    <h1 class=""><span class="green counter">100</span>+ Happy Clients</h1>
-                </div>
+            <div class="col-md-12">
+                <h2 class="text-center mb-4">100+ Happy Clients</h2>
             </div>
         </div>
     </div>
 </section>
 
-<div class="container">
-    <h2 class="text-center mb-4">Our Clients</h2>
-
-    <!-- Loop through clients and display their information -->
-    {% for client in clients %}
-    <div class="card client-card">
-        <img src="{{ client.clients_image.url }}" alt="{{ client.clients_name }}" class="card-img-top client-image">
-        <div class="card-body">
-            <h5 class="card-title">{{ client.clients_name }}</h5>
-            <p class="card-text"><strong>Location:</strong> {{ client.location }}</p>
-            <p class="card-text"><strong>Description:</strong> {{ client.description }}</p>
-            <p class="card-text"><strong>Contact:</strong> {{ client.client_contact }}</p>
-            <p class="card-text"><strong>Website:</strong> <a href="{{ client.url_link }}" target="_blank">{{ client.url_link }}</a></p>
+<div class="client-container">
+    <!-- Client List View -->
+    <div id="client-list-view">
+        {% for client in clients %}
+        <div class="client-details" id="client">
+            <h1>{{ client.name }}</h1>
+            <p><strong>Sector of Work:</strong> {{ client.sector_of_work }}</p>
+            <p><strong>Location:</strong> {{ client.location }}</p>
+            <p><strong>Description:</strong> {{ client.description }}</p>
+            <p><strong>Contact:</strong> {{ client.contact }}</p>
+            <p><strong>Website:</strong> <a href="{{ client.website_link }}">{{ client.website_link }}</a></p>
+            <p><strong>Email:</strong> <a href="mailto:{{ client.email }}">{{ client.email }}</a></p>
         </div>
+        {% endfor %}
     </div>
-    {% endfor %}
 </div>
 
 {% endblock %}

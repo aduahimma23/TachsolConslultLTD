@@ -1,6 +1,13 @@
 from django.contrib import admin
-from .models import (Portfolio, Clients, TeamMembers, Services,
+from .models import (Portfolio, Clients, TeamMembers, Services, About,
                         EmploymentRecord, ScopeofOpearation, Testimonial, Project, HomePage)
+
+@admin.register(About)
+class AboutAdmin(admin.ModelAdmin):
+    list_display = ('title', 'created_at', 'updated_at')
+    search_fields = ('title', 'content')
+    list_filter = ('created_at', 'updated_at')
+
 
 class ClientsAdmin(admin.ModelAdmin):
     list_display = ('name', 'location', 'sector_of_work')

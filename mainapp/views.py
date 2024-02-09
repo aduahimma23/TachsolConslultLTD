@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .forms import ContactForm
 from django.http import HttpResponseRedirect
 from django.views.generic import TemplateView
-from .models import Portfolio, Clients, Services, TeamMembers
+from .models import Portfolio, Clients, Services, TeamMembers, About
 
 def contact_us(request):
     if request.method == "POST":
@@ -33,10 +33,13 @@ def client_view(request):
     return render(request, "mainapp/clients.html", {"clients": clients})
 
 def about(request):
-    return render(request, 'mainapp/about.html')
+    abouts = About.objects.all()
+
+    return render(request, 'mainapp/about.html', {'abouts': abouts})
 
 def services(request):
     services = Services.objects.all()
+
     return render(request, 'mainapp/services.html', {'services': services})
 
 def team(request, member_id):
