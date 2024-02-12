@@ -4,96 +4,62 @@
 {% load static %}
 
 <main>
-    <!-- <div class="container-fluid px-0">
-        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-                <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-                <li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="" class="d-block w-100" alt="Image not found">
-                    <div class="carousel-caption d-none d-md-block text-dark">
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="{% static 'images/banner/inner-banner.jpg' %}" class="d-block w-100" alt="Image not found">
-                </div>
-                <div class="carousel-item">
-                    <img src="" class="d-block w-100" alt="Image not found">
-                </div>
-                <div class="carousel-item">
-                    <img src="" class="d-block w-100" alt="Image not found">
-                </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            </a>
-        </div>
-    </div> -->
-
+  <div class="top-home-container">
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
+      <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
+      </div>
+      <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="{% static 'images/banner/tachsol.png' %}" class="d-block w-100" alt="Image not found">
+              <img src="{% static 'images/banner/tachsol.png' %}" class="d-block w-100" alt="Image not found" width="600" height="400">
           </div>
           <div class="carousel-item">
-            <img src="{% static 'images/banner/tconsult.jpg' %}" class="d-block w-100" alt="Image not found">
+              <img src="{% static 'images/banner/tconsult.jpg' %}" class="d-block w-100" alt="Image not found" width="600" height="400">
           </div>
           <div class="carousel-item">
-            <img src="{% static 'images/banner/banner1.jpg' %}" class="d-block w-100" alt="Image not found">
+              <img src="{% static 'images/banner/banner1.jpg' %}" class="d-block w-100" alt="Image not found" width="600" height="400">
           </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-    
-
-    <div class="home-container">
-        <h1>Welcome to Our Tachsol Consult LTD</h1>
-        <p>{{ homepages.welcome_message }}</p>
-        {% for homepage in homepages %}
-        <div class="homepage">
-
-            <!-- Services -->
-            <h2>Our Services</h2>
-            <ul>
-                {% for service in homepage.services.all %}
-                <li>{{ service.scope.name }} - {{ service.activity }}</li>
-                {% endfor %}
-            </ul>
-
-            <!-- Testimonials -->
-            <h2>Testimonials</h2>
-            <div class="card-deck">
-                {% for testimonial in homepage.testimonials.all %}
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ testimonial.title }}</h5>
-                        <p class="card-text">{{ testimonial.content }}</p>
-                        <p class="card-text"><small class="text-muted">- {{ testimonial.author }}</small></p>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-        {% endfor %}
+      </button>
     </div>
+  </div>
+
+  <div class="home-container">
+      <h1 class="text-center">Welcome to Tachsol Consult LTD</h1>
+      <p>{{ homepages.welcome_message }}</p>
+      {% for homepage in homepages %}
+      <div class="homepage">
+          <!-- Services -->
+          <h2>Our Services</h2>
+          <ul>
+              {% for service in homepage.services.all %}
+              <li>{{ service.scope.name }} - {{ service.activity }}</li>
+              {% endfor %}
+          </ul>
+          <!-- Testimonials -->
+          <h2>Testimonials</h2>
+          <div class="card-deck">
+              {% for testimonial in homepage.testimonials %}
+              <div class="card">
+                  <div class="card-body">
+                      <h5 class="card-title">{{ testimonial.title }}</h5>
+                      <p class="card-text">{{ testimonial.content }}</p>
+                      <p class="card-text"><small class="text-muted">- {{ testimonial.author }}</small></p>
+                  </div>
+              </div>
+              {% endfor %}
+          </div>
+      </div>
+      {% endfor %}
+  </div>
 
 {% endblock %}

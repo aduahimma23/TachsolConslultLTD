@@ -7,10 +7,12 @@ class Title(models.Model):
     FEMALE_MARRIED = 'Mrs.'
 
     CHOICES = [
-        (MALE, 'Male'),
-        (FEMALE_SINGLE, 'Female (Single)'),
-        (FEMALE_MARRIED, 'Female (Married)'),
+        (MALE, 'Mr'),
+        (FEMALE_SINGLE, 'Ms'),
+        (FEMALE_MARRIED, 'Mrs'),
     ]
+    
+    gender = models.CharField(default='Mr', max_length=20, choices=CHOICES)
 
 class Project(models.Model):
     title = models.CharField(max_length=100)
@@ -35,14 +37,13 @@ class About(models.Model):
  
 class ScopeofOpearation(models.Model):
     name = models.CharField(max_length=100, blank=False, default='Human Resource Development, Training, and Facilitation')
-    description = models.TextField(max_length=200, blank=True, default='Human Resource Development')
 
     def __str__(self):
         return self.name
 
 
 class Services(models.Model):
-    scope = models.ForeignKey(ScopeofOpearation, on_delete=models.CASCADE)
+    scope = models.ForeignKey(ScopeofOpearation, on_delete=models.CASCADE, related_name='services')
     activity = models.CharField(max_length=255, blank=False, default='Training Needs Assessment')
     description = models.TextField(max_length=255, blank=True, default='Short note about the activity')
 
@@ -66,7 +67,7 @@ class HomePage(models.Model):
 
 
 class Portfolio(models.Model):
-    title = models.ForeignKey(Title, on_delete=models.CASCADE)
+    title = models.CharField(max_length=5, choices=Title.CHOICES)
     name = models.CharField(max_length=50, default="Tachsol", blank=False)
     email = models.EmailField(default="tachsol.km@gmail.com", blank=False)
     image = models.ImageField(upload_to='portfolio_images/', blank=True)
@@ -121,3 +122,11 @@ class TeamMembers(models.Model):
 
     def __str__(self):
         return f'{self.name} {self.email}'
+    
+
+class Mission(models.Model):
+    created_at = models.DateField(auto_now_add=True)
+    content = models.TextField(max_length=2000)
+
+    def __str__(self):
+        return f'Created {self.created_at}'

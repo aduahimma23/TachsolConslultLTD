@@ -14,20 +14,40 @@
         </div>
     </section>
 
-    <div class="row">
+    <!-- <div class="row">
         {% for service in services %}
-            <div class="col-md-4">
-                <div class="card service-card">
-                    <img src="{{ service.image.url }}" class="card-img-top" alt="{{ service.title }}">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ service.title }}</h5>
-                        <p class="card-text">{{ service.description }}</p>
-                    </div>
+        <div class="col-md-4">
+            <div class="card service-card">
+                <img src="{{ service.image.url }}" class="card-img-top" alt="{{ service.title }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ service.title }}</h5>
+                    <p class="card-text">{{ service.description }}</p>
                 </div>
             </div>
+        </div>
+        {% endfor %}
+    </div> -->
+
+    {% for scope in scopes %}
+<div class="scope-container">
+    <h2>{{ scope.name }}</h2>
+    <p>{{ scope.description }}</p>
+    <div class="row">
+        {% for service in scope.services_set.all %}
+        <div class="col-md-4">
+            <div class="card service-card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ service.activity }}</h5>
+                    <p class="card-text">{{ service.description }}</p>
+                </div>
+            </div>
+        </div>
         {% endfor %}
     </div>
 </div>
+{% endfor %}
+
+    
 </main>
 
 {% endblock %}

@@ -1,8 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .forms import ContactForm
 from django.http import HttpResponseRedirect
 from django.views.generic import TemplateView
-from .models import Portfolio, Clients, Services, TeamMembers, About
+from .models import Portfolio, Clients, Services, TeamMembers, About, ScopeofOpearation, Mission
 
 def contact_us(request):
     if request.method == "POST":
@@ -19,11 +19,23 @@ def homepage(request):
     return render(request, 'mainapp/index.html')
 
 
-class Mission(TemplateView):
-    template_name = 'mainapp/mission.html'
+# class Mission(TemplateView):
+#     model = Mission
+#     template_name = 'mainapp/mission.html'
 
-def portFolio(request):
-    portfolios = Portfolio.objects.all
+def mission_view(request):
+    mission = Mission.objects.first()
+
+    return render(request, 'mainapp/mission.html', {'mission': mission})
+
+
+# def portfolio_detail(request, portfolio_id):
+
+#     portfolio = get_object_or_404(Portfolio, pk=portfolio_id)
+
+
+def portfolio(request):
+    portfolios = Portfolio.objects.all()
 
     return render(request, "mainapp/portfolio.html", {'portfolios': portfolios})
 
@@ -37,8 +49,9 @@ def about(request):
 
     return render(request, 'mainapp/about.html', {'abouts': abouts})
 
-def services(request):
-    services = Services.objects.all()
+def service(request, scope_pk):
+    scope = ScopeofOpearation.objects.get(pk=scope_pk)
+    services = Services.objects.filter(scope=scope)
 
     return render(request, 'mainapp/services.html', {'services': services})
 

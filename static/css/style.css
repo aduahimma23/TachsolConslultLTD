@@ -2,17 +2,32 @@
 
 body{
     min-height: 100hv;
-    /* flex-direction: column; */
-}
-
-.nav {
     display: flex;
+    flex-direction: column;
     margin: 0;
-    padding: 0;
-}
+    font-family: 'Crete Round', serif;
+    font-family: 'Public Sans', sans-serif;
+    }
+
+.main-container {
+        flex: 1;
+        margin: 0 5% 2% 5%;
+        padding-top: 30px;
+    }
+
+.top-navbar {
+        padding: 10px 20px;
+    }
+
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    }
 
 .nav-item {
-    margin-right: 10px;
+    margin-right: 0;
+    border: 1px solid transparent;
 }
 
 .navbar-brand {
@@ -29,39 +44,24 @@ body{
     background-color: #fff;
 }
 
-nav form .form-control{
-    display: inline;
-    margin-left: 15px;
-    justify-content: end;
-}
-
 .navbar-nav .nav-link {
-    align-items: center;
     text-align: center;
-    padding-right: 10px;
-    font-size: 18px;
+    padding-right: 8px 8px;
+    font-size: 15px;
     border: 2px solid #F4CE14;
     background-color: #fff;
-    margin: 0 10px;
+    margin: 0 5px;
     border-radius: 10px;
-    color: #110361;
-}
-
-.navbar-nav .nav-link:hover {
-    background-color: #F4CE14;
-    color: #fff;
 }
 
 /* footer area */
 .footer {
-    background-color: #0A1D56;
+    background-color: #110361;
     text-align: center;
-    padding: 00px 0;
+    padding: 10px 0;
     width: 100%;
     bottom: 0;
     left: 0;
-    z-index: 999;
-    position: fixed;
 }
 
 .wrapper {
@@ -119,10 +119,10 @@ nav form .form-control{
 
 /* home page */
 .carousel-item img {
-    height: auto;
-    max-height: 50vh;
+    height: 300px;
     width: 100%;
     margin-top: 2%;
+    object-fit: fill;
 }
 
 /* Services */
@@ -203,11 +203,6 @@ nav form .form-control{
     transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 
-.btn-primary:hover {
-    background-color: #110361;
-    border-color: #F4CE14;
-}
-
 /* Styling for the callback area */
 .callback-area {
     background-color: #110361;
@@ -259,13 +254,6 @@ nav form .form-control{
     color: #110361;
     margin-bottom: 10px;
 }
-
-:root {
-    --messenger-blue: #0084ff;
-    --fb-blue: #3b5998;
-    --wa-green: #25d366;
-    --instagram: radial-gradient(circle at 30% 107%, #fdf497 0%, 	#fd1d1d 1%, #fdf497 5%, #fd5949 35%,#d6249f 62%,#285AEB 90%);
-  }
 
 .social-media{
     display: inline-block;
@@ -319,36 +307,78 @@ nav form .form-control{
 
   /* clients page */
   .client-container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.client-container h1 {
-    color: #007bff;
-}
+    width: 70%;
+    height: 50%;
+    display: inline-block;
+  }
 
 .client-container .list-group-item {
     cursor: pointer;
 }
 
 .client-details {
-    margin-top: 20px;
-    border: 1px solid #ccc;
-    padding: 15px;
-    border-radius: 5px;
+    border: 2px solid #110361;
+    padding: 5px;
+    border-radius: 10px;
     background-color: #f8f9fa;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .client-details h1 {
-    margin-top: 0;
-    margin-bottom: 10px;
-    color: #007bff;
+    margin-bottom: 5px;
+    font-size: medium;
+    color: #110361;
 }
 
 .client-details p {
     margin: 5px 0;
+}
+
+.client-details img{
+    object-fit: fill;
+    width: 100px;
+    height: 100px;
+}
+
+/* mission page */
+.mission-container{
+    margin-top: 5%;
+    font-size: medium;
+
+}
+
+/* about page */
+.about-container{
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    /* width: 50%;
+    height: 50%; */
+}
+
+#about-image{
+    justify-content: center;
+    align-items: center;
+    object-fit: contain;
+    padding: 0;
+    margin-left: 20%;
+    width: 200px;
+    height: 200px;
+    object-fit: fill;
+    border: 0;
+    border-radius: 10px;
+    margin-right: 0.5rem;
+}
+
+#about-text{
+    font-style: italic;
+    font: bold;
+}
+
+.about-text{
+    margin-left: auto;
+    margin-left: -5%;
+    text-align: justify;
 }

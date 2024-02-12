@@ -11,7 +11,7 @@
         </div>
     </div>
 </section>
-
+<hr>
 <section class="partners pt-5 pb-5 bg-light">
     <div class="container">
         <div class="row">
@@ -21,22 +21,26 @@
         </div>
     </div>
 </section>
-
+<hr>
 <div class="client-container">
     <!-- Client List View -->
-    <div id="client-list-view">
+    <div id="client-list-view" class="row justify-content-center">
         {% for client in clients %}
-        <div class="client-details" id="client">
-            <h1>{{ client.name }}</h1>
-            <p><strong>Sector of Work:</strong> {{ client.sector_of_work }}</p>
-            <p><strong>Location:</strong> {{ client.location }}</p>
-            <p><strong>Description:</strong> {{ client.description }}</p>
-            <p><strong>Contact:</strong> {{ client.contact }}</p>
-            <p><strong>Website:</strong> <a href="{{ client.website_link }}">{{ client.website_link }}</a></p>
-            <p><strong>Email:</strong> <a href="mailto:{{ client.email }}">{{ client.email }}</a></p>
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="client-details" id="client">
+                <img src="{{ client.image.url }}" alt="" class="img-fluid">
+                <h1>{{ client.name }}</h1>
+                <p><strong>Sector of Work:</strong> {{ client.sector_of_work }}</p>
+                <p><strong>Location:</strong> {{ client.location }}</p>
+                <p><strong>Description:</strong> {{ client.description }}</p>
+                <p><strong>Contact:</strong> {{ client.contact }}</p>
+                <p><strong>Website:</strong> <a href="{{ client.website_link }}">{{ client.website_link }}</a></p>
+                <p><strong>Email:</strong> <a href="mailto:{{ client.email }}">{{ client.email }}</a></p>
+            </div>
         </div>
         {% endfor %}
     </div>
 </div>
+
 
 {% endblock %}

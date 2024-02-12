@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import (Portfolio, Clients, TeamMembers, Services, About,
+from .models import (Portfolio, Clients, TeamMembers, Services, About, Mission,
                         EmploymentRecord, ScopeofOpearation, Testimonial, Project, HomePage)
 
 @admin.register(About)
@@ -7,12 +7,20 @@ class AboutAdmin(admin.ModelAdmin):
     list_display = ('title', 'created_at', 'updated_at')
     search_fields = ('title', 'content')
     list_filter = ('created_at', 'updated_at')
+    # list_editable = ('title', 'content')
 
+
+@admin.register(Mission)
+class MissionAdmin(admin.ModelAdmin):
+    list_display = ('created_at', 'content')
+    # list_editable = ('created_at', 'content')
+    # list_editable = ('content')
 
 class ClientsAdmin(admin.ModelAdmin):
     list_display = ('name', 'location', 'sector_of_work')
     search_fields = ('name', 'location', 'sector_of_work')
     list_filter = ('location', 'sector_of_work')
+    # list_editable = ('name', 'location', 'sector_of_work')
 
 admin.site.register(Clients, ClientsAdmin)
 
@@ -41,7 +49,7 @@ class ServicesInline(admin.TabularInline):
 
 class ScopeofOpearationAdmin(admin.ModelAdmin):
     inlines = [ServicesInline,]
-    list_display = ['name', 'description']
+    list_display = ['name']
     search_fields = ['name']
 
 admin.site.register(ScopeofOpearation, ScopeofOpearationAdmin)

@@ -6,10 +6,10 @@ app_name = "mainapp"
 urlpatterns = [
     path('home/', views.homepage, name='home'),
     path('about/', views.about, name='about'),
-    path('mission/', views.Mission.as_view(), name='mission'),
+    path('mission/', views.mission_view, name='mission'),
     path('contact/', views.contact_us, name='contact'),
-    path('portfolio/', views.portFolio, name='portfolio'),
+    path('portfolio/', views.portfolio, name='portfolio'),
     path('client/', views.client_view, name='client'),
-    path('services/', views.services, name="services"),
+    path('service/', views.service, name="service"),
     path('team/', views.team, name='team')
 ]
