@@ -351,7 +351,7 @@ html, body{
   /* clients page */
   .client-container {
     width: 70%;
-    height: 50%;
+    height: 60%;
     display: inline-block;
   }
 
@@ -381,8 +381,9 @@ html, body{
 
 .client-details img{
     object-fit: fill;
-    width: 100px;
-    height: 100px;
+    width: 125px;
+    height: 125px;
+    border-radius: 20px;
 }
 
 /* mission page */
