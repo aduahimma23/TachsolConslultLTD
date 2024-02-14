@@ -35,8 +35,8 @@
 
   <div class="home-container">
       <h1 class="text-center">Welcome to Tachsol Consult LTD</h1>
-      <p>{{ homepages.welcome_message }}</p>
-      {% for homepage in homepages %}
+      <p>{{ home_pages.welcome_message }}</p>
+      {% for homepage in home_pages %}
       <div class="homepage">
           <!-- Services -->
           <h2>Our Services</h2>
@@ -48,12 +48,12 @@
           <!-- Testimonials -->
           <h2>Testimonials</h2>
           <div class="card-deck">
-              {% for testimonial in homepage.testimonials %}
+              {% for testimonial in homepage.testimonials.all %}
               <div class="card">
                   <div class="card-body">
-                      <h5 class="card-title">{{ testimonial.title }}</h5>
+                      <!-- <h5 class="card-title">{{ testimonial.title }}</h5> -->
                       <p class="card-text">{{ testimonial.content }}</p>
-                      <p class="card-text"><small class="text-muted">- {{ testimonial.author }}</small></p>
+                      <p class="card-text"><small class="text-muted">-{{ testimonial.title }} {{ testimonial.author }}</small></p>
                   </div>
               </div>
               {% endfor %}
@@ -62,4 +62,5 @@
       {% endfor %}
   </div>
 
+  </main>
 {% endblock %}

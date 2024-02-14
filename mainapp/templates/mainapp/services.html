@@ -3,7 +3,7 @@
 {% block content %}
 {% load static %}
 
- <main>
+<main>
     <section class="inner-banner">
         <div class="container">
             <div class="row align-items-center">
@@ -14,40 +14,32 @@
         </div>
     </section>
 
-    <!-- <div class="row">
-        {% for service in services %}
-        <div class="col-md-4">
-            <div class="card service-card">
-                <img src="{{ service.image.url }}" class="card-img-top" alt="{{ service.title }}">
-                <div class="card-body">
-                    <h5 class="card-title">{{ service.title }}</h5>
-                    <p class="card-text">{{ service.description }}</p>
-                </div>
+    <div class="container custom-container">
+        <div class="row">
+            {% for scope in scopes %}
+            <div class="col-lg-4 col-md-4 col-sm-6 mb-4">
+                <ol class="list-group">
+                    <li class="list-group-item custom-list-item">
+                        <div class="scope-container">
+                            <h4>{{ forloop.counter }}. {{ scope.name }}</h4>
+                            <div class="row">
+                                {% for service in scope.services.all %}
+                                <div class="col-lg-12">
+                                    <div class="service-item">
+                                        <h6>{{ forloop.counter }}. {{ service.activity }}</h6>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </li>
+                </ol>
             </div>
+            {% endfor %}
         </div>
-        {% endfor %}
-    </div> -->
-
-    {% for scope in scopes %}
-<div class="scope-container">
-    <h2>{{ scope.name }}</h2>
-    <p>{{ scope.description }}</p>
-    <div class="row">
-        {% for service in scope.services_set.all %}
-        <div class="col-md-4">
-            <div class="card service-card">
-                <div class="card-body">
-                    <h5 class="card-title">{{ service.activity }}</h5>
-                    <p class="card-text">{{ service.description }}</p>
-                </div>
-            </div>
-        </div>
-        {% endfor %}
     </div>
-</div>
-{% endfor %}
-
     
+   
 </main>
 
 {% endblock %}

@@ -35,7 +35,7 @@ class About(models.Model):
         return self.title
 
  
-class ScopeofOpearation(models.Model):
+class ScopeOfOperation(models.Model):
     name = models.CharField(max_length=100, blank=False, default='Human Resource Development, Training, and Facilitation')
 
     def __str__(self):
@@ -43,7 +43,7 @@ class ScopeofOpearation(models.Model):
 
 
 class Services(models.Model):
-    scope = models.ForeignKey(ScopeofOpearation, on_delete=models.CASCADE, related_name='services')
+    scope = models.ForeignKey(ScopeOfOperation, on_delete=models.CASCADE, related_name='services')
     activity = models.CharField(max_length=255, blank=False, default='Training Needs Assessment')
     description = models.TextField(max_length=255, blank=True, default='Short note about the activity')
 
@@ -52,9 +52,10 @@ class Services(models.Model):
     
 
 class Testimonial(models.Model):
-    title = models.ForeignKey(Title, on_delete=models.CASCADE)
+    title = models.CharField(max_length=5, choices=Title.CHOICES)
     author = models.CharField(max_length=100, default='Mr. Martin Offei')
     content = models.TextField(max_length=1500, default="Write the testimonial here")
+
 
 class HomePage(models.Model):
     welcome_message = models.TextField()

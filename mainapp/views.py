@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from .forms import ContactForm
 from django.http import HttpResponseRedirect
 from django.views.generic import TemplateView
-from .models import Portfolio, Clients, Services, TeamMembers, About, ScopeofOpearation, Mission
+from .models import Portfolio, Clients, Services, TeamMembers, About, ScopeOfOperation, Mission, HomePage
 
 def contact_us(request):
     if request.method == "POST":
@@ -16,23 +16,13 @@ def contact_us(request):
     return render(request, 'mainapp/contact_us.html', {'form': form})
 
 def homepage(request):
-    return render(request, 'mainapp/index.html')
-
-
-# class Mission(TemplateView):
-#     model = Mission
-#     template_name = 'mainapp/mission.html'
+    home_pages = HomePage.objects.all()
+    return render(request, 'mainapp/index.html', {'home_pages': home_pages})
 
 def mission_view(request):
     mission = Mission.objects.first()
 
     return render(request, 'mainapp/mission.html', {'mission': mission})
-
-
-# def portfolio_detail(request, portfolio_id):
-
-#     portfolio = get_object_or_404(Portfolio, pk=portfolio_id)
-
 
 def portfolio(request):
     portfolios = Portfolio.objects.all()
@@ -49,13 +39,12 @@ def about(request):
 
     return render(request, 'mainapp/about.html', {'abouts': abouts})
 
-def service(request, scope_pk):
-    scope = ScopeofOpearation.objects.get(pk=scope_pk)
-    services = Services.objects.filter(scope=scope)
+def service(request):
+    scopes = ScopeOfOperation.objects.all()
 
-    return render(request, 'mainapp/services.html', {'services': services})
+    return render(request, 'mainapp/services.html', {'scopes': scopes})
 
-def team(request, member_id):
-   members = TeamMembers.objects.get(id=member_id)
+def team(request):
+   members = TeamMembers.objects.all()
 
    return render(request, 'mainapp/team.html', {'members': members})

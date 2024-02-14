@@ -13,4 +13,21 @@
     </div>
 </section>
 
+<div class="container">
+    <div class="row">
+        {% for member in members %}
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card justify-content-center">
+                <img src="{{ member.image.url }}" class="card-img-top" alt="{{ member.name }}">
+                <div class="card-body">
+                    <h5 class="card-title">Name: {{ member.name }}</h5>
+                    <p class="card-text">Position: {{ member.position }}</p>
+                    <p class="card-text"><small class="text-muted">Email: {{ member.email }}</small></p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
 {% endblock %}

@@ -16,6 +16,7 @@
     </head>
 
     <body>
+        <div class="bodywrapper">
         <div class="top-navbar">
             <nav class="navbar navbar-expand-lg navbar-light flex-fill fixed-top">
                 <div class="container">
@@ -35,10 +36,13 @@
                                 <a class="nav-link" href="{% url 'mainapp:service' %}">Services</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{% url 'mainapp:client' %}">Clients</a>
+                                <a class="nav-link" href="{% url 'mainapp:team' %}">Members</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{% url 'mainapp:portfolio' %}">Portfolio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'mainapp:client' %}">Clients</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{% url 'mainapp:contact' %}">Contact</a>
@@ -80,7 +84,7 @@
                 </div>
             </div>
         </footer>
-
+    </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
         <script>
             $(document).ready(function() {

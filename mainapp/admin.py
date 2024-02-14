@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import (Portfolio, Clients, TeamMembers, Services, About, Mission,
-                        EmploymentRecord, ScopeofOpearation, Testimonial, Project, HomePage)
+                        EmploymentRecord, ScopeOfOperation, Testimonial, Project, HomePage)
 
 @admin.register(About)
 class AboutAdmin(admin.ModelAdmin):
@@ -47,12 +47,12 @@ admin.site.register(TeamMembers)
 class ServicesInline(admin.TabularInline):
     model = Services
 
-class ScopeofOpearationAdmin(admin.ModelAdmin):
+class ScopeofOperationAdmin(admin.ModelAdmin):
     inlines = [ServicesInline,]
     list_display = ['name']
     search_fields = ['name']
 
-admin.site.register(ScopeofOpearation, ScopeofOpearationAdmin)
+admin.site.register(ScopeOfOperation, ScopeofOperationAdmin)
 
 
 @admin.register(Project)
